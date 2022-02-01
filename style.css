@@ -131,3 +131,17 @@ textarea::-webkit-scrollbar {
     color: #cfcfcf;
     min-width: 40px;
 }
+
+img {
+    width: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 90px;
+    box-shadow: 0 2px 5px 3px #151515;
+}
+
+#icons{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
