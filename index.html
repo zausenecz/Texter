@@ -1,0 +1,374 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Texter</title>
+    <meta lang="ru">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <script>
+        var alltxt = "";
+        var plused;
+
+        var clicked = 0;
+
+        function FastCopy() {
+            updateText();
+            if (clicked % 2 == 0) {
+                createShortText();
+                document.getElementById('fastCopier').innerText = "Копировать название";
+            } else {
+                copy('header1');
+                document.getElementById('fastCopier').innerText = "Копировать описание";
+            }
+            clicked++;
+        }
+
+
+
+        function pluser() {
+            var C1 = parseInt(document.getElementById('c1').innerHTML, 10);
+            var C2 = parseInt(document.getElementById('c2').innerHTML, 10);
+            var C3 = parseInt(document.getElementById('c3').innerHTML, 10);
+            var C4 = parseInt(document.getElementById('c4').innerHTML, 10);
+
+            plused = C1 + C2 + C3 + C4;
+        }
+
+        function createText() {
+            var cnt1 = parseInt(document.getElementById('c1').innerHTML, 10);
+
+            var cnt2s = cnt1 + 1;
+            var cnt2f = cnt2s + parseInt(document.getElementById('c2').innerHTML, 10) - 1;
+
+            var cnt3s = cnt2f + 1;
+            var cnt3f = cnt3s + parseInt(document.getElementById('c3').innerHTML, 10) - 1;
+
+            var cnt4s = cnt3f + 1;
+            var cnt4f = cnt4s + parseInt(document.getElementById('c4').innerHTML, 10) - 1;
+
+            alltxt = "";
+
+            alltxt += 'Нажмите на "Мафа мебель для дома" или на "Перейти в магазин" для просмотра всего ассортимента мебели нашего магазина\n';
+            alltxt += 'Наши преимущества\n';
+            alltxt += '1 Работаем в рассрочку 6 месяцев без первоначального взноса\n';
+            alltxt += '2 Скидки для молодожёнов, новосёлов, пенсионеров и другие интересные акций\n';
+            alltxt += '3 Широкий модельный ряд более 1000 наименований\n';
+            alltxt += '4 Принимаем банковские карты. Безналичный расчёт\n';
+            alltxt += '5 Есть доставка, подъем, сборка\n';
+            alltxt += '6 Гарантия на мебель\n';
+            alltxt += '7 Возможность оформления заказа дистанционно\n';
+            alltxt += '8 Индивидуальный подход к каждому покупателю\n';
+            alltxt += '9 Изготовление мебели по индивидуальным размерам\n';
+            alltxt += '__________________________________________________________\n';
+
+
+
+
+            if (parseInt(document.getElementById('c1').innerHTML, 10) != 1)
+                alltxt += document.getElementById('header1').innerText + " (фото 1-" + cnt1 + ")" + "\n";
+            else alltxt += document.getElementById('header1').innerText + " (фото 1)" + "\n";
+            alltxt += document.getElementById('text1').innerText + "\n\n";
+
+            if (parseInt(document.getElementById('c2').innerHTML, 10) != 1)
+                alltxt += document.getElementById('header2').innerText + " (фото " + cnt2s + "-" + cnt2f + ")" + "\n";
+            else alltxt += document.getElementById('header2').innerText + " (фото " + cnt2s + ")" + "\n";
+            alltxt += document.getElementById('text2').innerText + "\n\n";
+
+
+            if (parseInt(document.getElementById('c3').innerHTML, 10) != 1)
+                alltxt += document.getElementById('header3').innerText + " (фото " + cnt3s + "-" + cnt3f + ")" + "\n";
+            else alltxt += document.getElementById('header3').innerText + " (фото " + cnt3s + ")" + "\n";
+            alltxt += document.getElementById('text3').innerText + "\n\n";
+
+            if (parseInt(document.getElementById('c4').innerHTML, 10) != 1)
+                alltxt += document.getElementById('header4').innerText + " (фото " + cnt4s + "-" + cnt4f + ")" + "\n";
+            else alltxt += document.getElementById('header4').innerText + " (фото " + cnt4s + ")" + "\n";
+            alltxt += document.getElementById('text4').innerText + "\n";
+
+            alltxt += '__________________________________________________________\n';
+            alltxt += 'Ждем ваших звонков!';
+
+            const str = alltxt;
+            const el = document.createElement('textarea');
+            el.value = str;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+
+        function createShortText() {
+            var cnt1 = parseInt(document.getElementById('c1').innerHTML, 10);
+
+            var cnt2s = cnt1 + 1;
+            var cnt2f = cnt2s + parseInt(document.getElementById('c2').innerHTML, 10) - 1;
+
+            var cnt3s = cnt2f + 1;
+            var cnt3f = cnt3s + parseInt(document.getElementById('c3').innerHTML, 10) - 1;
+
+            var cnt4s = cnt3f + 1;
+            var cnt4f = cnt4s + parseInt(document.getElementById('c4').innerHTML, 10) - 1;
+
+            alltxt = "";
+
+            alltxt += 'Нажмите на "Мафа мебель для дома" или на "Перейти в магазин" для просмотра всего ассортимента мебели нашего магазина\n';
+            alltxt += 'Наши преимущества\n';
+            alltxt += '1 Работаем в рассрочку 6 месяцев без первоначального взноса\n';
+            alltxt += '2 Скидки для молодожёнов, новосёлов, пенсионеров и другие интересные акций\n';
+            alltxt += '3 Широкий модельный ряд более 1000 наименований\n';
+            alltxt += '4 Принимаем банковские карты. Безналичный расчёт\n';
+            alltxt += '5 Есть доставка, подъем, сборка\n';
+            alltxt += '6 Гарантия на мебель\n';
+            alltxt += '7 Возможность оформления заказа дистанционно\n';
+            alltxt += '8 Индивидуальный подход к каждому покупателю\n';
+            alltxt += '9 Изготовление мебели по индивидуальным размерам\n';
+            alltxt += '__________________________________________________________\n';
+
+
+
+
+
+            alltxt += document.getElementById('text1').innerText + "\n";
+
+
+            alltxt += '__________________________________________________________\n';
+            alltxt += 'Ждем ваших звонков!';
+
+            const str = alltxt;
+            const el = document.createElement('textarea');
+            el.value = str;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+
+
+
+        function copy(txt) {
+            const str = document.getElementById(txt).innerText;
+            const el = document.createElement('textarea');
+            el.value = str;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+
+        function paste(inp, txt) {
+
+            var text = document.getElementById(inp).value;
+            var rep = text.replace(/\n \n/gi, '\n');
+            rep = rep.replace(/\n\n\n/gi, '\n');
+            rep = rep.replace(/\n\n/gi, '\n');
+            rep = rep.replace(/\*/gi, 'x');
+
+            if (inp == 'inp1' || inp == 'inp2' || inp == 'inp3' || inp == 'inp4')
+                rep = rep.replace(/\n/gi, '');
+            else
+                rep = rep.replace(/\n/gi, '<br />');
+            document.getElementById(txt).innerHTML = rep;
+        }
+
+        function updateText() {
+
+            paste('inp1', 'header1')
+            paste('inp11', 'text1')
+
+            paste('inp2', 'header2')
+            paste('inp22', 'text2')
+
+            paste('inp3', 'header3')
+            paste('inp33', 'text3')
+
+            paste('inp4', 'header4')
+            paste('inp44', 'text4')
+        }
+
+
+
+        function select(inp) {
+            inp.select();
+        }
+
+        function add(count) {
+            pluser();
+            var num = document.getElementById(count).innerHTML;
+            if (plused < 10)
+                document.getElementById(count).innerHTML = parseInt(num, 10) + 1;
+
+            pluser();
+            if (plused >= 10) {
+
+                document.getElementById("p1").className = "plus";
+                document.getElementById("p2").className = "plus";
+                document.getElementById("p3").className = "plus";
+                document.getElementById("p4").className = "plus";
+
+            }
+
+        }
+
+        function sub(count) {
+
+            document.getElementById("p1").className = "button";
+            document.getElementById("p2").className = "button";
+            document.getElementById("p3").className = "button";
+            document.getElementById("p4").className = "button";
+            var num = document.getElementById(count).innerHTML;
+            if (parseInt(num, 10) != 1) document.getElementById(count).innerHTML = parseInt(num, 10) - 1;
+
+        }
+
+        function Clear(inp) {
+            document.getElementById(inp).value = "";
+        }
+
+        function clearText() {
+            Clear('inp1');
+            Clear('inp11');
+
+            Clear('inp2');
+            Clear('inp22');
+
+            Clear('inp3');
+            Clear('inp33');
+
+            Clear('inp4');
+            Clear('inp44');
+
+        }
+
+    </script>
+
+    <div id="preview">
+        <p contenteditable="true" class="header" id="header1"></p>
+        <p contenteditable="true" class="text" id="text1"></p>
+        <br />
+        <p contenteditable="true" class="header" id="header2"></p>
+        <p contenteditable="true" class="text" id="text2"></p>
+        <br />
+        <p contenteditable="true" class="header" id="header3"></p>
+        <p contenteditable="true" class="text" id="text3"></p>
+        <br />
+        <p contenteditable="true" class="header" id="header4"></p>
+        <p contenteditable="true" class="text" id="text4"></p>
+
+    </div>
+
+    <div id="tools">
+
+        <div class="inp">
+
+            <textarea spellcheck="false" class="inpText" id="inp1"></textarea>
+
+            <button onclick="paste('inp1', 'header1')" class="button">Вставить</button>
+            <button onclick="copy('header1')" class="button">Копировать</button>
+            <button onclick="Clear('inp1')" class="button">Очистить</button>
+
+        </div>
+
+        <div class="inp">
+            <textarea spellcheck="false" class="inpText" id="inp11"></textarea>
+
+            <button onclick="paste('inp11', 'text1')" class="button">Вставить</button>
+            <button onclick="copy('text1')" class="button">Копировать</button>
+            <button onclick="Clear('inp11')" class="button">Очистить</button>
+
+        </div>
+        <div class="inp">
+            <button onclick="sub('c1')" class="button">-</button>
+            <p id="c1" class="count">1</p>
+            <button id="p1" onclick="add('c1')" class="button">+</button>
+        </div>
+        <br />
+
+        <div class="inp">
+            <textarea spellcheck="false" class="inpText" id="inp2"></textarea>
+
+            <button onclick="paste('inp2', 'header2')" class="button">Вставить</button>
+            <button onclick="copy('header2')" class="button">Копировать</button>
+            <button onclick="Clear('inp2')" class="button">Очистить</button>
+        </div>
+
+        <div class="inp">
+            <textarea spellcheck="false" class="inpText" id="inp22"></textarea>
+
+            <button onclick="paste('inp22', 'text2')" class="button">Вставить</button>
+            <button onclick="copy('text2')" class="button">Копировать</button>
+            <button onclick="Clear('inp22')" class="button">Очистить</button>
+        </div>
+        <div class="inp">
+            <button onclick="sub('c2')" class="button">-</button>
+            <p id="c2" class="count">1</p>
+            <button id="p2" onclick="add('c2')" class="button">+</button>
+        </div>
+        <br />
+
+        <div class="inp">
+            <textarea spellcheck="false" class="inpText" id="inp3"></textarea>
+
+            <button onclick="paste('inp3', 'header3')" class="button">Вставить</button>
+            <button onclick="copy('header3')" class="button">Копировать</button>
+            <button onclick="Clear('inp3')" class="button">Очистить</button>
+        </div>
+
+        <div class="inp">
+            <textarea spellcheck="false" class="inpText" id="inp33"></textarea>
+
+            <button onclick="paste('inp33', 'text3')" class="button">Вставить</button>
+            <button onclick="copy('text3')" class="button">Копировать</button>
+            <button onclick="Clear('inp33')" class="button">Очистить</button>
+        </div>
+        <div class="inp">
+            <button onclick="sub('c3')" class="button">-</button>
+            <p id="c3" class="count">1</p>
+            <button id="p3" onclick="add('c3')" class="button">+</button>
+        </div>
+        <br />
+
+        <div class="inp">
+            <textarea spellcheck="false" class="inpText" id="inp4"></textarea>
+
+            <button onclick="paste('inp4', 'header4')" class="button">Вставить</button>
+            <button onclick="copy('header4')" class="button">Копировать</button>
+            <button onclick="Clear('inp4')" class="button">Очистить</button>
+        </div>
+
+        <div class="inp">
+            <textarea spellcheck="false" class="inpText" id="inp44"></textarea>
+
+            <button onclick="paste('inp44', 'text4')" class="button">Вставить</button>
+            <button onclick="copy('text4')" class="button">Копировать</button>
+            <button onclick="Clear('inp44')" class="button">Очистить</button>
+        </div>
+        <div class="inp">
+            <button onclick="sub('c4')" class="button">-</button>
+            <p id="c4" class="count">1</p>
+            <button id="p4" onclick="add('c4')" class="button">+</button>
+        </div>
+        <br />
+
+        <button onclick="createText()" class="buttonAll">Копировать всё</button>
+        <button onclick="updateText()" class="buttonAll">Обновить всё</button>
+        <button onclick="FastCopy()" id="fastCopier" class="buttonAll">Копировать описание</button>
+        <button onclick="clearText()" id="clear" class="buttonAll">Очистить всё</button>
+
+    </div>
+
+
+    <div id="icons">
+        <a target="_blank" href="https://www.avito.ru/additem"><img src="assets/avito.png"></a>
+        <a target="_blank" href="https://youla.ru/product/create"><img src="assets/ula.png"></a>
+    </div>
+
+
+</body>
+
+</html>
